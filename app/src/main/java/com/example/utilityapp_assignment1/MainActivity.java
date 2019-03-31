@@ -13,6 +13,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Spinner;
+import android.content.Context;
+
+
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -99,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
 
-            //create a mesage to enter quantity
+            //create a message to enter quantity
             Context context = getApplicationContext();
             CharSequence text = "Enter Quantity";
             int duration = Toast.LENGTH_SHORT;

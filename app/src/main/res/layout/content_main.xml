@@ -34,7 +34,7 @@
         tools:layout_editor_absoluteY="257dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/convertButton"
         android:layout_width="132dp"
         android:layout_height="64dp"
         android:text="Button"

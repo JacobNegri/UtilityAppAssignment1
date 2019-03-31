@@ -19,7 +19,7 @@ public class conversion_length {
     private String end_unit_type;
 
 
-    public Length_Conversion(){
+    public conversion_length(){
         beginning_qty = 0;
         ending_qty = 0;
         beg_unit_type = "";
