@@ -43,7 +43,7 @@ public class conversion_length {
     }
 
     public String getStartUnitType() {
-        return beg_unit_type
+        return beg_unit_type;
     }
 
     public void setStartUnitType(String beg_unit_type) {
@@ -71,8 +71,8 @@ public class conversion_length {
         // declare and initialise variables
         double beginning_qty = getStartingValue();
         double ending_qty = getEndingValue();
-        double beg_unit_type = getUnitTypeConstant(getStartingValue());
-        double end_unit_type = getUnitTypeConstant(getEndingValue());
+        double beg_unit_type = getUnitTypeConstant(getStartUnitType());
+        double end_unit_type = getUnitTypeConstant(getEndUnitType());
 
         //convert to kilometres
         ending_qty = kilometres/beg_unit_type;
