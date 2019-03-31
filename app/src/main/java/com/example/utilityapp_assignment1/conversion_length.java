@@ -1,10 +1,12 @@
 package com.example.utilityapp_assignment1;
 
+import java.text.NumberFormat;
+
 public class conversion_length {
 
     //Variables of each unit comparison, with the base unit used as 1 kilometre
 
-    final double killometres = 1;
+    final double kilometres = 1;
     final double metres = 1000;
     final double centimetres = 100000;
     final double millimetres = 1000000;
@@ -17,11 +19,11 @@ public class conversion_length {
     private String end_unit_type;
 
 
-    public LengthConversion(){
+    public Length_Conversion(){
         beginning_qty = 0;
         ending_qty = 0;
         beg_unit_type = "";
-        end_unit_type = ""
+        end_unit_type = "";
     }
 
     public double getStartingValue() {
@@ -29,7 +31,7 @@ public class conversion_length {
     }
 
     public void setStartingValue(double beginning_qty) {
-        this.beginning_qty = beginning_qty
+        this.beginning_qty = beginning_qty;
     }
 
     public double getEndingValue() {
@@ -56,5 +58,41 @@ public class conversion_length {
         this.end_unit_type = end_unit_type;
     }
 
-    
+    public double getUnitTypeConstant(String unit_type){
+        if(unit_type == "metres"){return metres;}
+        if(unit_type == "centimetres"){return centimetres;}
+        if(unit_type == "millimetres"){return millimetres;}
+        if(unit_type == "kilometres"){return kilometres;}
+        return 0;
+    }
+
+    public double calculatingEndQnty(){
+
+        // declare and initialise variables
+        double beginning_qty = getStartingValue();
+        double ending_qty = getEndingValue();
+        double beg_unit_type = getUnitTypeConstant(getStartingValue());
+        double end_unit_type = getUnitTypeConstant(getEndingValue());
+
+        //convert to kilometres
+        ending_qty = kilometres/beg_unit_type;
+
+        //convert from kilometres
+        ending_qty = ending_qty * beginning_qty;
+
+        //multiply by initial quantity to get final quantity
+        ending_qty = ending_qty * beginning_qty;
+
+        return ending_qty;
+    }
+
+    public String toString(){
+
+        //create a number format object
+        NumberFormat nf = NumberFormat.getNumberInstance();
+
+        nf.setMaximumFractionDigits(4);
+
+        return nf.format(getEndingValue()) + " " + getEndUnitType();
+    }
 }
